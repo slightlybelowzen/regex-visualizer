@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import '@fontsource-variable/fira-code';
+	import '@fontsource/fira-sans';
 	import RegexVisualizer from '$lib/components/RegexVisualizer.svelte';
 
 	let input = $state('');
-	let ast = $state({ input: '', regex: '' });
+	let ast = $state(null);
 	let regex = $state('');
 
 	async function parseRegex(e: SubmitEvent) {
@@ -17,8 +19,7 @@
 		if (!response.ok) {
 			throw new Error('Failed to parse regex and construct ASt');
 		}
-		const ast = await response.json();
-		console.log(ast);
+		ast = await response.json();
 	}
 </script>
 
@@ -44,7 +45,7 @@
 		<button type="submit">Visualize</button>
 	</form>
 	{#if ast}
-		<div class="mt-8 w-full max-w-4xl">
+		<div class="mt-8">
 			<RegexVisualizer {ast} />
 		</div>
 	{/if}
