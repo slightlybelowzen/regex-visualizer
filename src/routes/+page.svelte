@@ -23,6 +23,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Regex Visualizer</title>
+</svelte:head>
+
 <main class="flex flex-col items-center justify-center">
 	<header class="text-center">
 		<h1 class="mb-2 text-3xl font-semibold">Visualising a regex engine</h1>
