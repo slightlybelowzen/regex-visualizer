@@ -4,7 +4,7 @@
 
 @layer base {
 	body {
-		@apply mx-auto max-w-xl bg-black/90 px-4 py-10 text-base leading-normal tracking-tight text-white/90 antialiased;
+		@apply mx-auto max-w-xl bg-black bg-opacity-[92%] px-4 py-10 text-base leading-normal tracking-tight text-white/90 antialiased;
 	}
 	input {
 		@apply rounded-md border border-zinc-700/50 bg-zinc-800 px-2 py-1 text-white/90 ring-amber-400/20 focus:border-zinc-800 focus:outline-none focus:outline-amber-500 focus:ring;

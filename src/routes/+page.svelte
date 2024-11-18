@@ -29,7 +29,9 @@
 
 <main class="flex flex-col items-center justify-center">
 	<header class="text-center">
-		<h1 class="mb-2 text-2xl font-semibold md:text-3xl">Visualising a regex engine</h1>
+		<h1 class="mb-2 text-2xl font-semibold tracking-tighter md:text-3xl md:tracking-tight">
+			Visualising a regex engine
+		</h1>
 		<p class="text-zinc-400">
 			Something I've wanted to do for a while, combining writing a simple compiler (yes, regex
 			engines are simple compilers) and visualising the various stages of the output. I've only

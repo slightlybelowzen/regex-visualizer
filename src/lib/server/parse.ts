@@ -33,10 +33,8 @@ function process(regex: string, context: ParseContext) {
 			let groupContext: ParseContext = { pos: context.pos, tokens: [] };
 			parseGroup(regex, groupContext);
 			context.tokens.push({ type: TokenType.Group, value: groupContext.tokens });
+			context.pos = groupContext.pos;
 			break;
-		// case '[':
-		// 	parseBracket(regex, context);
-		// 	break;
 		case '|':
 			parseOr(regex, context);
 			break;
@@ -82,7 +80,7 @@ function parseRepeat(regex: string, context: ParseContext) {
 		default:
 			throw new Error('Invalid repeat operator');
 	}
-	let lastToken = context.tokens[context.tokens.length - 1];
+	const lastToken = context.tokens[context.tokens.length - 1];
 	context.tokens[context.tokens.length - 1] = {
 		type: TokenType.Repeat,
 		value: { min: min, max: max, token: lastToken }
