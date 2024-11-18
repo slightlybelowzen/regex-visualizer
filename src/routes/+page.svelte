@@ -35,7 +35,8 @@
 			Something I've wanted to do for a while, combining writing a simple compiler (yes, regex
 			engines are simple compilers) and visualising the various stages of the output. I've only
 			implemented a small subset of the regex language for the time being. It supports groups
-			<code>()</code>, alternation <code>|</code>, and repetition <code>*</code> and <code>+</code>.
+			<code>()</code>, alternation <code>|</code>, and repetition <code>*</code>, <code>+</code>
+			,<code>?</code>
 		</p>
 	</header>
 	<form onsubmit={parseRegex} class="mt-12 flex flex-col items-center gap-4">
@@ -54,4 +55,8 @@
 	{#if context}
 		<RegexVisualizer {context} />
 	{/if}
+	<p class="mt-12 text-center text-zinc-400">
+		PS. It's nowhere near finished, I'm still working on making this visualizer prettier and adding
+		the time travelling evaluation engine.
+	</p>
 </main>
