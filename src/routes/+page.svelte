@@ -25,7 +25,6 @@
 
 <svelte:head>
 	<title>Regex Visualizer</title>
-	<script type="text/javascript" src="vkbeautify.js"></script>
 </svelte:head>
 
 <main class="flex flex-col items-center justify-center">
@@ -55,7 +54,7 @@
 	{#if context}
 		<RegexVisualizer {context} />
 	{/if}
-	<p class="mt-12 text-center text-zinc-400">
+	<p class="mt-12 border-l-4 border-amber-700 bg-amber-700/10 px-1 py-2 text-center text-zinc-400">
 		PS. It's nowhere near finished, I'm still working on making this visualizer prettier and adding
 		the time travelling evaluation engine.
 	</p>
