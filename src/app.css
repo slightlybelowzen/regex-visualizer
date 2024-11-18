@@ -4,13 +4,13 @@
 
 @layer base {
 	body {
-		@apply mx-auto max-w-xl bg-black/90 py-10 text-lg leading-normal text-white/90 antialiased;
+		@apply mx-auto max-w-xl bg-black/90 px-4 py-10 text-base leading-normal tracking-tight text-white/90 antialiased;
 	}
 	input {
 		@apply rounded-md border border-zinc-700/50 bg-zinc-800 px-2 py-1 text-white/90 ring-amber-400/20 focus:border-zinc-800 focus:outline-none focus:outline-amber-500 focus:ring;
 	}
 	label {
-		@apply mb-2 block text-base font-medium text-white/90 text-zinc-400;
+		@apply mb-1 block text-base font-medium text-white/90 text-zinc-400;
 	}
 	button {
 		@apply rounded-md bg-amber-400 px-4 py-1 font-medium text-amber-900 hover:bg-amber-400/90;
