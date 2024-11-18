@@ -5,7 +5,7 @@
 	import RegexVisualizer from '$lib/components/RegexVisualizer.svelte';
 
 	let input = $state('');
-	let ast = $state(null);
+	let context = $state(null);
 	let regex = $state('');
 
 	async function parseRegex(e: SubmitEvent) {
@@ -19,12 +19,13 @@
 		if (!response.ok) {
 			throw new Error('Failed to parse regex and construct ASt');
 		}
-		ast = await response.json();
+		context = await response.json();
 	}
 </script>
 
 <svelte:head>
 	<title>Regex Visualizer</title>
+	<script type="text/javascript" src="vkbeautify.js"></script>
 </svelte:head>
 
 <main class="flex flex-col items-center justify-center">
@@ -32,7 +33,9 @@
 		<h1 class="mb-2 text-3xl font-semibold">Visualising a regex engine</h1>
 		<p class="text-zinc-400">
 			Something I've wanted to do for a while, combining writing a simple compiler (yes, regex
-			engines are simple compilers) and visualising the various stages of the output.
+			engines are simple compilers) and visualising the various stages of the output. I've only
+			implemented a small subset of the regex language for the time being. It supports groups
+			<code>()</code>, alternation <code>|</code>, and repetition <code>*</code> and <code>+</code>.
 		</p>
 	</header>
 	<form onsubmit={parseRegex} class="mt-12 flex flex-col items-center gap-4">
@@ -48,9 +51,7 @@
 		</div>
 		<button type="submit">Visualize</button>
 	</form>
-	{#if ast}
-		<div class="mt-8">
-			<RegexVisualizer {ast} />
-		</div>
+	{#if context}
+		<RegexVisualizer {context} />
 	{/if}
 </main>

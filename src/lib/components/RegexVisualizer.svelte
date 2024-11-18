@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { AST } from '$lib/server/parse';
+	import type { ParseContext } from '$lib/server/parse';
 
-	export let ast: AST = {};
+	export let context: ParseContext = { pos: 0, tokens: [] };
 </script>
 
-<div>
-	<pre class="whitespace-pre-wrap text-base">{JSON.stringify(ast)}</pre>
+<div class="mt-8">
+	<pre class="text-base">{JSON.stringify(context, null, 4)}</pre>
 </div>

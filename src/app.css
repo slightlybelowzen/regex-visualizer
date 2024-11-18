@@ -15,4 +15,7 @@
 	button {
 		@apply rounded-md bg-amber-400 px-4 py-1 font-medium text-amber-900 hover:bg-amber-400/90;
 	}
+	code {
+		@apply text-base;
+	}
 }
