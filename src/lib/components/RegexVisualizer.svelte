@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { AST } from '$lib/server/parse';
 
-	export let ast: AST = { input: '', regex: '' };
+	export let ast: AST = {};
 </script>
 
 <div>

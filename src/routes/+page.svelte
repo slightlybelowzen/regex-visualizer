@@ -35,7 +35,7 @@
 			engines are simple compilers) and visualising the various stages of the output.
 		</p>
 	</header>
-	<form onsubmit={parseRegex} class="mt-4 flex flex-col items-center gap-4">
+	<form onsubmit={parseRegex} class="mt-12 flex flex-col items-center gap-4">
 		<div class="flex gap-6">
 			<div>
 				<label for="regex">Regex input</label>
