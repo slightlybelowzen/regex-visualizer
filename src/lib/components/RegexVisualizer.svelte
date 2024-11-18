@@ -5,5 +5,5 @@
 </script>
 
 <div class="mt-8">
-	<pre class="text-base">{JSON.stringify(context, null, 4)}</pre>
+	<pre class="text-sm">{JSON.stringify(context, null, 4)}</pre>
 </div>
