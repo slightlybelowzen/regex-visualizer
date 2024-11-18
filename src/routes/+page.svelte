@@ -5,7 +5,7 @@
 	import RegexVisualizer from '$lib/components/RegexVisualizer.svelte';
 
 	let input = $state('');
-	let context = $state(null);
+	let ast = $state(null);
 	let regex = $state('');
 
 	async function parseRegex(e: SubmitEvent) {
@@ -19,7 +19,8 @@
 		if (!response.ok) {
 			throw new Error('Failed to parse regex and construct ASt');
 		}
-		context = await response.json();
+		const data = await response.json();
+		ast = data.tokens;
 	}
 </script>
 
@@ -53,8 +54,8 @@
 		</div>
 		<button class="mt-2" type="submit">Visualize</button>
 	</form>
-	{#if context}
-		<RegexVisualizer {context} />
+	{#if ast}
+		<RegexVisualizer tokens={ast} />
 	{/if}
 	<p class="mt-8 border-l-4 border-amber-700 bg-amber-700/10 px-1 py-2 text-center text-zinc-400">
 		PS. It's nowhere near finished, I'm still working on making this visualizer prettier and adding

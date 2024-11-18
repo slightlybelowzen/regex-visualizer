@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { ParseContext } from '$lib/server/parse';
+	import type { Token } from '$lib/server/parse';
 
-	export let context: ParseContext = { pos: 0, tokens: [] };
+	export let tokens: Token[] = [];
 </script>
 
 <div class="mt-8">
-	<pre class="text-sm">{JSON.stringify(context, null, 2)}</pre>
+	<pre class="text-sm">{JSON.stringify(tokens, null, 2)}</pre>
 </div>
