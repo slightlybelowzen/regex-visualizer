@@ -4,6 +4,12 @@
 	export let tokens: Token[] = [];
 </script>
 
-<div class="mt-8">
-	<pre class="text-sm">{JSON.stringify(tokens, null, 2)}</pre>
+<svelte:head></svelte:head>
+
+<div class="mt-6 w-full">
+	<pre class="rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-sm">{JSON.stringify(
+			tokens,
+			null,
+			2
+		)}</pre>
 </div>

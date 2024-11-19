@@ -7,7 +7,7 @@ enum TokenType {
 	GroupUncaptured = 'GroupUncaptured'
 }
 
-interface Token {
+export interface Token {
 	type: TokenType;
 	value: Object;
 }
@@ -58,7 +58,12 @@ function parseOr(regex: string, context: ParseContext) {
 	let left = { type: TokenType.GroupUncaptured, value: context.tokens };
 	let right = { type: TokenType.GroupUncaptured, value: rhsContext.tokens };
 	context.pos = rhsContext.pos;
-	context.tokens = [left, right];
+	context.tokens = [
+		{
+			type: TokenType.Or,
+			value: [left, right]
+		}
+	];
 }
 
 function parseRepeat(regex: string, context: ParseContext) {
