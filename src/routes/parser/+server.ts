@@ -1,4 +1,4 @@
-import { parse } from '$lib/server/parse';
+import parse from '$lib/server/parse';
 import type { RequestEvent } from '@sveltejs/kit';
 
 export function GET(event: RequestEvent) {
